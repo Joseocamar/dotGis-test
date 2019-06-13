@@ -1,0 +1,33 @@
+
+.button {
+  width: 5vw;
+  height: 2vh;
+  font-size: 1.2em;
+  border-radius: 15px;
+  padding: 1.5em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hourChart{
+  @extend .button;
+  background-color: rgba(51, 255, 51, 0.5);
+  color: #242424f6;
+  margin: 0 1em;
+}
+
+
+.fetchData {
+  @extend .button;
+  background-color: rgba(51,102,255,0.5);
+  color: white;
+  margin: 1em 0; 
+}
+
+
+.graphicType {
+  @extend .button;
+  background-color: rgba(88, 51, 255, 0.5);
+  color: white;
+  margin: 0 1em;
+}

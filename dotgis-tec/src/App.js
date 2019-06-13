@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Navbar from './Component/Navbar'
+import FetchedData from './Component/fetchedData'
+import ChartJs from './Component/chartJs'
+import GraphicType from './Component/graphicType'
+import HourChart from './Component/hourChart'
 
-function App() {
-  return (
+const App = () =>  (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <Navbar></Navbar>
       </header>
+      <main>
+        <FetchedData/>
+        <section className="sectionView">
+        
+          <GraphicType/>         
+          <ChartJs/>
+          <HourChart/>
+        
+        </section>
+        
+      </main>
     </div>
-  );
-}
+
+    
+  )
+
 
 export default App;

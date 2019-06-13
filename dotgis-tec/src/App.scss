@@ -1,0 +1,59 @@
+@import './styles/fetchedData.scss';
+@import './styles/Button.scss';
+@import './styles/chartJs.scss';
+
+$moc: #facd52;
+$bkf: rgba(0,0,0,0.9);
+
+header {
+  height: 10vh;
+  width: 100vw;
+  margin-bottom: 10px;
+}
+
+body {
+  display: flex;
+}
+
+main {
+  display: flex;
+  height: 80vh;
+  width: 100vw;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background-color: $moc;
+  color: $bkf;
+  padding: 0.05em 0 0.05em 2em; 
+  p {
+    align-content: flex-start;
+    font-size: 2em;
+  }
+}
+
+.asideView { 
+  width: 10vw;
+  height: 80vh;
+  padding-left: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.sectionView {
+  width: 88vw;
+  height: 80vh;
+  margin-left: 5vw;
+}
+
+.alignerFlexRow {
+  margin: 1em 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
