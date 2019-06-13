@@ -1,33 +1,54 @@
+$green : 255;
+$red   : 51;
+$blue  : 255;
 
 .button {
-  width: 5vw;
-  height: 2vh;
+  -webkit-user-select: none;         
+  -moz-user-select: none;
+  -ms-user-select: none; 
+  user-select: none;
   font-size: 1.2em;
   border-radius: 15px;
-  padding: 1.5em;
+  padding: 1.2em 2em;
   text-align: center;
   cursor: pointer;
+  display:block;
 }
 
 .hourChart{
   @extend .button;
-  background-color: rgba(51, 255, 51, 0.5);
+  background-color: rgba(51, $green, 51, 0.5);
   color: #242424f6;
-  margin: 0 1em;
+  margin: 0.5em;
 }
 
 
 .fetchData {
   @extend .button;
-  background-color: rgba(51,102,255,0.5);
+  background-color: rgba($red,102,255,0.5);
   color: white;
-  margin: 1em 0; 
+  margin: 0 0.5em; 
 }
 
 
 .graphicType {
   @extend .button;
-  background-color: rgba(88, 51, 255, 0.5);
+  background-color: rgba(88, 51, $blue, 0.5);
   color: white;
-  margin: 0 1em;
+  margin: 0.5em;
+}
+
+.hourChart:active{
+  @extend .hourChart;
+  background-color: rgba(51, $green - 90, 51, 0.5);
+}
+
+.fetchData:active {
+  @extend .fetchData;
+  background-color: rgba($red - 50, 102,255,0.5);
+}
+
+.graphicType:active{
+  @extend .graphicType;
+  background-color: rgba(88,51,$blue - 90,0.5);
 }

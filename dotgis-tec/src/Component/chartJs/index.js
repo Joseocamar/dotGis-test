@@ -26,16 +26,56 @@ const data = {
   }]
 }
 
+const chartType = a => a
+
 const ChartJs = () => 
-<div className="setHeight">
-  <Line
-    data={data}
-    options={{
-      maintainAspectRatio: false
-    
-    }}
-  />
-  </div>
+  
+{
+  let a;
+  switch (chartType(Bar)) {
+    case Line:
+      a = (<div className="setHeight">
+        <Line
+          data={data}
+          options={{
+          maintainAspectRatio: false
+          }}
+        />
+        </div>)
+      break;
+    case Bar:
+      a = (<div className="setHeight">
+          <Bar
+          data={data}
+          options={{
+          maintainAspectRatio: false
+          }}
+          />
+          </div>)
+      break;
+      case Pie:
+        a = (<div className="setHeight">
+            <Pie
+              data={data}
+              options={{
+              maintainAspectRatio: false
+              }}
+              />
+            </div>)
+        break;
+    default:
+          a = (<div className="setHeight">
+            <Line
+              data={data}
+              options={{
+              maintainAspectRatio: false
+              }}
+            />
+          </div>)
+          break;
+    }
+    return a}
+
 
 
 export default ChartJs;

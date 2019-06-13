@@ -4,12 +4,12 @@ const FetchedData = () => {
   
   return (
     <div className="asideView">
-      <span className="col fetchData">Temp</span>
-      <span className="col fetchData">Min temp</span>
-      <span className="col fetchData">Max temp</span>
-      <span className="col fetchData">Pressure</span>
-      <span className="col fetchData">Sea Level</span>
-      <span className="col fetchData">Humidity</span>
+      <span className="fetchData">Temp</span>
+      <span className="fetchData">Min temp</span>
+      <span className="fetchData">Max temp</span>
+      <span className="fetchData">Pressure</span>
+      <span className="fetchData">Sea Level</span>
+      <span className="fetchData">Humidity</span>
     </div>
   )
 }

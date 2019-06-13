@@ -1,22 +1,22 @@
 @import './styles/fetchedData.scss';
 @import './styles/Button.scss';
 @import './styles/chartJs.scss';
+@import './styles/Reset.scss';
 
 $moc: #facd52;
-$bkf: rgba(0,0,0,0.9);
+$bkf: rgba(17, 17, 17, 0.733);
 
 header {
   height: 10vh;
-  width: 100vw;
+  width: 100%;
   margin-bottom: 10px;
+  background-color: $moc;
 }
 
-body {
-  display: flex;
-}
 
 main {
   display: flex;
+  flex-wrap: no-wrap;
   height: 80vh;
   width: 100vw;
 }
@@ -25,20 +25,20 @@ nav {
   display: flex;
   align-items: center;
   height: 100%;
-  background-color: $moc;
   color: $bkf;
   padding: 0.05em 0 0.05em 2em; 
   p {
+    font-family: 'Pacifico', cursive;
     align-content: flex-start;
     font-size: 2em;
   }
 }
 
-.asideView { 
-  width: 10vw;
+.asideView {
+  width: 10%;
   height: 80vh;
-  padding-left: 20px;
-  box-sizing: border-box;
+  padding-left: 10px;
+  box-sizing: content-box;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,14 +46,15 @@ nav {
 }
 
 .sectionView {
-  width: 88vw;
+  width: 80%;
   height: 80vh;
-  margin-left: 5vw;
+  padding-left: 3em;
 }
 
 .alignerFlexRow {
   margin: 1em 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
 }
