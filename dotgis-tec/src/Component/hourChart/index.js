@@ -1,14 +1,26 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {setTimeLapse} from './../../actions'
+import {connect} from 'react-redux'
 
-const HourChart = () => {
-return(
+class HourChart extends Component{
+
+  handleTimeLapse = value => {
+    this.props.setTimeLapse(value)
+  }
+
+  render() {
+  return(
   <div className="alignerFlexRow">
-    <span className="hourChart button">Hour</span>
-    <span className="hourChart button">Daily</span>  
-    <span className="hourChart button">Sso</span>  
-    <span className="hourChart button">Forecast</span>  
-  </div>
+    <span className="hourChart button" onClick={() => this.handleTimeLapse('threeHours')}>Day 3 Hours</span>
+    <span className="hourChart button" onClick={() => this.handleTimeLapse('sixHours')}>Day 6 Hours</span>
+    <span className="hourChart button" onClick={() => this.handleTimeLapse('fiveDays')}>5 Days</span>  
+  </div>  
+  )}
+}
 
-)}
+const mapDispatchToProps = dispatch => ({
+  setTimeLapse: value => dispatch(setTimeLapse(value))
+})
 
-export default HourChart;
+const HourChartRedux = connect(null, mapDispatchToProps)(HourChart)
+export default HourChartRedux;

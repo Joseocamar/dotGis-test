@@ -9,7 +9,8 @@ $blue  : 255;
   user-select: none;
   font-size: 1.2em;
   border-radius: 15px;
-  padding: 1.2em 2em;
+  width: 5em;
+  padding: 1em 0;
   text-align: center;
   cursor: pointer;
   display:block;
@@ -27,7 +28,7 @@ $blue  : 255;
   @extend .button;
   background-color: rgba($red,102,255,0.5);
   color: white;
-  margin: 0 0.5em; 
+  margin: 0.2em 0.5em;
 }
 
 

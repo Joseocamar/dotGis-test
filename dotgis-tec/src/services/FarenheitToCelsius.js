@@ -1,0 +1,1 @@
+export const FarenheitToCelsius = temp => temp - 273.15

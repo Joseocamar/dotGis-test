@@ -1,15 +1,30 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {setGraphType} from './../../actions'
+import {connect} from 'react-redux'
 
-const GraphicType = () => {
-return(
+class GraphicType extends Component {
+
+  handleGraphType = value => {
+    this.props.setGraphType(value)
+  }
+
+  render() {
+  
+  return (
   <div className="alignerFlexRow">
-    <span className="graphicType button">Bar</span>
-    <span className="graphicType button">Line</span>  
-    <span className="graphicType button">Pie</span>  
-    <span className="graphicType button">dia4</span> 
-    <span className="graphicType button">dia5</span>  
+    <span className="graphicType button" onClick={() => this.handleGraphType('Bar')}>Bar</span>
+    <span className="graphicType button" onClick={() => this.handleGraphType('Line')}>Line</span>  
+    <span className="graphicType button" onClick={() => this.handleGraphType('Horizontal')}>Horizontal</span>  
+    <span className="graphicType button" onClick={() => this.handleGraphType('Doughnut')}>Doughnut</span> 
+    <span className="graphicType button" onClick={() => this.handleGraphType('Polar')}>Polar</span>  
   </div>
+  )
+}}
 
-)}
 
-export default GraphicType;
+const mapDispatchToProps = dispatch => ({
+  setGraphType: value => dispatch(setGraphType(value))
+})
+
+const GraphicTypeRedux = connect(null, mapDispatchToProps)(GraphicType)
+export default GraphicTypeRedux;
