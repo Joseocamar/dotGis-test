@@ -16,7 +16,6 @@ class FetchedData extends Component {
       <span className="fetchData" onClick={() => this.handleGraphData('temp_min')}>Min temp</span>
       <span className="fetchData" onClick={() => this.handleGraphData('temp_max')}>Max temp</span>
       <span className="fetchData" onClick={() => this.handleGraphData('pressure')}>Pressure</span>
-      <span className="fetchData" onClick={() => this.handleGraphData('sea_level')}>Sea Level</span>
       <span className="fetchData" onClick={() => this.handleGraphData('humidity')}>Humidity</span>
     </div>
     )}

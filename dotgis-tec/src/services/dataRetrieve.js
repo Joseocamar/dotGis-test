@@ -6,15 +6,15 @@ import {FarenheitToCelsius} from './FarenheitToCelsius'
 
 const dataRetrieve = (obj, val, numOut = 1, posSum = 1 ) => {
   let tempF;
-  let temp = []
+  let data = []
   const workBench = Object.entries(obj.list.map(elm => elm)).map(elm => Object.entries(elm[1]).map(elm=> elm[1]))
   
   for(let i = 0; i < workBench.length/numOut; i+=posSum){
     if(val==='temp'||val==='temp_min'||val==='temp_max') tempF = Math.round(FarenheitToCelsius(workBench[i][1][val]))
     else tempF = Math.round(workBench[i][1][val])
-    temp.push(tempF)
+    data.push(tempF)
   }
-    return temp
+    return data
 }
 
 export {dataRetrieve}

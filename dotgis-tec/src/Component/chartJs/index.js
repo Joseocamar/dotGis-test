@@ -40,21 +40,20 @@ const chartType = a => {
 class ChartJs extends Component {
   
   
-  
   render () {
-  console.log(this.props.state)
-  let a;
+    
+    console.log(this.props)
   let setData = () =>  {
-      data = this.props.state.graphType === 'Bar'  || 
-      this.props.state.graphType === 'Line' ||
-      this.props.state.graphType === 'Horizontal' ?
+      data = this.props.graphType === 'Bar'  || 
+      this.props.graphType === 'Line' ||
+      this.props.graphType === 'Horizontal' ?
       ({
-        labels: this.props.state[`${this.props.state.graphTimelapse}`].linear.label,
+        labels: this.props.state[`${this.props.graphTimelapse}`].linear.label,
         datasets: [{
-            label: "Awita",
+            label: "Cº",
             fill: false,
             showLine: true,
-            data: this.props.state[`${this.props.state.graphTimelapse}`].linear.data[`${this.props.state.graphData}`],
+            data: this.props.state[`${this.props.graphTimelapse}`].linear.data[`${this.props.graphData}`],
             backgroundColor: backgroundArrColor,
             borderColor: '#000000',
             borderWidth: 1
@@ -62,27 +61,27 @@ class ChartJs extends Component {
       })
       :
       ({
-        labels: this.props.state[`${this.props.state.graphTimelapse}`].pie[`${this.props.state.graphData}`][`${this.props.state.graphData}`].label,
+        labels: this.props.state[`${this.props.graphTimelapse}`].pie[`${this.props.graphData}`][`${this.props.graphData}`].label,
         datasets: [{
-          label: "Awita2",
+          label: "PieData",
           fill: false,
           showLine: true,
-          data: this.props.state[`${this.props.state.graphTimelapse}`].pie[`${this.props.state.graphData}`][`${this.props.state.graphData}`].values,
+          data: this.props.state[`${this.props.graphTimelapse}`].pie[`${this.props.graphData}`][`${this.props.graphData}`].values,
           backgroundColor: backgroundArrColor,
           borderColor: '#000000',
           borderWidth: 1
       }]
     })
   }
-
-  
+  if(!this.props.state) return <p>Loading...</p>
+  else {
 
   setData()
 
-  switch (chartType(this.props.state.graphType)) {
+  switch (chartType(this.props.graphType)) {
     case Line:
 
-      a = (<div className="setHeight">
+      return (<div className="setHeight">
         <Line
           data={data}
           options={{
@@ -90,9 +89,8 @@ class ChartJs extends Component {
           }}
         />
         </div>)
-      break;
     case Bar:
-      a = (<div className="setHeight">
+      return (<div className="setHeight">
           <Bar
           data={data}
           options={{
@@ -100,9 +98,8 @@ class ChartJs extends Component {
           }}
           />
           </div>)
-      break;
       case Doughnut:
-        a = (<div className="setHeight">
+        return (<div className="setHeight">
             <Doughnut
               data={data}
               options={{
@@ -110,9 +107,9 @@ class ChartJs extends Component {
               }}
               />
             </div>)
-        break;
+
         case HorizontalBar:
-        a = (<div className="setHeight">
+        return (<div className="setHeight">
             <HorizontalBar
               data={data}
               options={{
@@ -120,9 +117,9 @@ class ChartJs extends Component {
               }}
               />
             </div>)
-        break;
+
         case Polar:
-          a = (<div className="setHeight">
+          return (<div className="setHeight">
               <Polar
                 data={data}
                 options={{
@@ -130,9 +127,9 @@ class ChartJs extends Component {
                 }}
                 />
               </div>)
-          break;
+  
     default:
-          a = (<div className="setHeight">
+          return (<div className="setHeight">
             <Line
               data={data}
               options={{
@@ -140,10 +137,11 @@ class ChartJs extends Component {
               }}
             />
           </div>)
-          break;
+  
     }
-    return a}
   }
+}
+}
 
 
   const mapStateToProps = state => ({...state})

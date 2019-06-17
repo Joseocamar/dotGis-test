@@ -6,15 +6,14 @@ import FetchedData from './Component/fetchedData'
 import ChartJs from './Component/chartJs'
 import GraphicType from './Component/graphicType'
 import HourChart from './Component/hourChart'
-import {setWeather} from './actions'
-import { theTrueData } from './services/FetchWeather';
+import {fetchData} from './actions'
 
 
 class App extends Component {
     
 
   render() {
-    this.props.setWeather(theTrueData)  
+    this.props.fetchData()  
   
     return (
     <div className="App">
@@ -37,7 +36,7 @@ class App extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  setWeather: value => dispatch(setWeather(value))
+  fetchData: value => dispatch(fetchData())
 })
 
 const AppRedux = connect(null, mapDispatchToProps)(App)

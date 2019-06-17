@@ -1,24 +1,23 @@
-import {setWeather, setGraphType, setTimeLapse, setGraphData} from './../actions/'
+import {SET_WEATHER,
+  SET_GRAPH_TYPE,
+  SET_TIMELAPSE,
+  SET_GRAPH_DATA} from './../actions/'
 
-let state = {}
 
-export const reducer = (state, action) => {
+const reducer = (state, action) => {
   switch (action.type) {
-    case setWeather:
-      return { state: action.value}
-    case setGraphType:
-      state = {...state.state}
-      state.graphType = action.value
-      return {state}
-    case setTimeLapse:
-      state = {...state.state}
-      state.graphTimelapse = action.value
-      return {state}
-    case setGraphData:
-      state = {...state.state}
-      state.graphData = action.value
-      return {state}
+    case SET_WEATHER:
+      return {state: action.value, graphType: "Bar", graphTimelapse: "threeHours", graphData: "temp"}
+    case SET_GRAPH_TYPE:
+      return {...state, graphType: action.value}
+    case SET_TIMELAPSE:
+        return {...state, graphTimelapse: action.value}
+    case SET_GRAPH_DATA:
+        return {...state, graphData: action.value}
     default:
-      break;
+      return state
   }
 }
+
+
+export default reducer
