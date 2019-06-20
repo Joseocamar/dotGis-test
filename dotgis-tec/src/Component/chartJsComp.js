@@ -1,5 +1,6 @@
 import React from 'react'
 import {Bar, Line, HorizontalBar, Polar, Doughnut} from 'react-chartjs-2'
+import {city} from './../Constants/index'
 
 let data;
 
@@ -8,61 +9,57 @@ const ChartJsComp = props => {
     switch (elm.graphType) {
       case 'Bar':
         data=elm.weatherData.linear[elm.graphTimelapse][elm.graphData]
-        return (<div className="setHeight">
+        return (
         <Bar
           data={data}
           options={{
           maintainAspectRatio: false
           }}
-        />
-        </div>) 
+        />) 
       case 'Line':
         data=elm.weatherData.linear[elm.graphTimelapse][elm.graphData]
-        return (<div className="setHeight">
+        return (
         <Line
           data={data}
           options={{
           maintainAspectRatio: false
           }}
-        />
-        </div>)  
+        />)  
       case 'Horizontal':
         data=elm.weatherData.linear[elm.graphTimelapse][elm.graphData]
-        return (<div className="setHeight">
+        return (
         <HorizontalBar
           data={data}
           options={{
           maintainAspectRatio: false
           }}
-        />
-        </div>)
+        />)
       case 'Doughnut':
-        return (<div className="setHeight">
+        return (
         <Doughnut
           data={elm.weatherData.pie[elm.graphTimelapse][elm.graphData]}
           options={{
           maintainAspectRatio: false
           }}
-        />
-        </div>)
+        />)
       case 'Polar':
-        return (<div className="setHeight">
+        return (
         <Polar
           data={elm.weatherData.pie[elm.graphTimelapse][elm.graphData]}
           options={{
           maintainAspectRatio: false
           }}
-        />
-        </div>)
+        />)
       default:
         return (<h1>Problem while loading</h1>)
     }
   }
   
   return (
-  
-      chartType(props.weatherObj)
-    // <h1>Hi</h1>
+    <div className="setHeight">
+      {chartType(props.weatherObj)}
+      <p>{`Showing ${props.weatherObj.graphData} ${props.weatherObj.graphTimelapse} in ${city}`}</p>
+    </div>
   )
 }
 

@@ -17,7 +17,10 @@ class ChartJs extends Component {
 }
 
 
-  const mapStateToProps = state => ({...state})
+  const mapStateToProps = state => {
+    if(state) return JSON.parse(JSON.stringify(state))
+    else return {}
+    }
   
   const ChartJSRedux = connect(mapStateToProps, null)(ChartJs)
   export default ChartJSRedux;

@@ -5,9 +5,6 @@ import {SET_WEATHER,
 
 
 const reducer = (state, action) => {
-  console.log(action.value)
-  console.log("--------")
-  console.log(state)
   switch (action.type) {
     case SET_GRAPH_TYPE:
       return {...state, graphType: action.value}
