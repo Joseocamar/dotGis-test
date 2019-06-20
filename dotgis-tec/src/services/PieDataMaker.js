@@ -20,7 +20,7 @@ const PieDataMaker = (dataSet, val, timeLapse) => {
       }
       values.push(count)
     })
-    return Data(label, values, backgroundArrColor)
+    return Data(label, "Cº", values, backgroundArrColor)
 }
 
 

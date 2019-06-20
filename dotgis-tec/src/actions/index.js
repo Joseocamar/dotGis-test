@@ -27,15 +27,21 @@ export const fetchData = () => {
             case "linear":
               switch (j) {
                 case "threeHours":
-                  theTrueData[i][j][z] = Data(label[0], dataRetrieve(data, z, 5), backgroundArrColor)
+                  if(z==="temp"||z==="temp_min"||z==="temp_max") theTrueData[i][j][z] = Data(label[0], "Cº", dataRetrieve(data, z, 5), backgroundArrColor) 
+                  if(z==="humidity") theTrueData[i][j][z] = Data(label[0], "humidity %", dataRetrieve(data, z, 5), backgroundArrColor)
+                  if(z==="pressure") theTrueData[i][j][z] = Data(label[0], "Pascal", dataRetrieve(data, z, 5), backgroundArrColor)
                   break;
               
                 case "sixHours":
-                  theTrueData[i][j][z] = Data(label[1], dataRetrieve(data, z, 5, 2), backgroundArrColor)
+                  if(z==="temp"||z==="temp_min"||z==="temp_max") theTrueData[i][j][z] = Data(label[1], "Cº", dataRetrieve(data, z, 5, 2), backgroundArrColor) 
+                  if(z==="humidity") theTrueData[i][j][z] = Data(label[1], "humidity %", dataRetrieve(data, z, 5, 2 ), backgroundArrColor)
+                  if(z==="pressure") theTrueData[i][j][z] = Data(label[1], "Pascal", dataRetrieve(data, z, 5), backgroundArrColor)
                   break;
                 
                 case "fiveDays":
-                  theTrueData[i][j][z] = Data(label[2], dataRetrieve(data, z, 1, 8), backgroundArrColor)
+                  if(z==="temp"||z==="temp_min"||z==="temp_max") theTrueData[i][j][z] = Data(label[2], "Cº", dataRetrieve(data, z, 1, 8), backgroundArrColor) 
+                  if(z==="pressure") theTrueData[i][j][z] = Data(label[2], "Pascal", dataRetrieve(data, z, 1, 8), backgroundArrColor)
+                  if(z==="humidity") theTrueData[i][j][z] = Data(label[2], "humidity %", dataRetrieve(data, z, 1, 8), backgroundArrColor)
                   break;
                 
                   default:

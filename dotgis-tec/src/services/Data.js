@@ -1,8 +1,8 @@
 
-export const Data = (labels,data,backgroundArrColor) => ({
+export const Data = (labels, label,data,backgroundArrColor) => ({
     labels : labels,
     datasets : [{
-        label: 'Cº',
+        label: label,
         fill: false,
         showLine: true,
         data: data,
