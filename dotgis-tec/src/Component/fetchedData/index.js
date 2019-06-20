@@ -9,7 +9,6 @@ class FetchedData extends Component {
   }
   render() {
     
-
     return (
     <div className="asideView">
       <span className="fetchData" onClick={() => this.handleGraphData('temp')}>Temp</span>

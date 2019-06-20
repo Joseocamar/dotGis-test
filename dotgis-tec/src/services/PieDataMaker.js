@@ -1,9 +1,11 @@
+import {backgroundArrColor} from './../Constants'
+import {Data} from './Data'
+
 const PieDataMaker = (dataSet, val, timeLapse) => {
   let label = []
   let values = []
-  
-  const arrT = new Array(dataSet[timeLapse].linear.data[val])
-  const arr = arrT.join(",").split(",");
+  const arrT = new Array(dataSet.linear[timeLapse][val].datasets[0].data)
+  const arr = arrT.join(",").split(",")
     arr.forEach(elm=>{
       if(elm===null) return;
       label.push(elm)
@@ -18,8 +20,7 @@ const PieDataMaker = (dataSet, val, timeLapse) => {
       }
       values.push(count)
     })
-
-    return {[val]: {label, values}}
+    return Data(label, values, backgroundArrColor)
 }
 
 

@@ -12,11 +12,11 @@ class GraphicType extends Component {
   
   return (
   <div className="alignerFlexRow">
-    <span className="graphicType button" onClick={() => this.handleGraphType('Bar')}>Bar</span>
-    <span className="graphicType button" onClick={() => this.handleGraphType('Line')}>Line</span>  
-    <span className="graphicType button" onClick={() => this.handleGraphType('Horizontal')}>Horizontal</span>  
-    <span className="graphicType button" onClick={() => this.handleGraphType('Doughnut')}>Doughnut</span> 
-    <span className="graphicType button" onClick={() => this.handleGraphType('Polar')}>Polar</span>  
+    <span className="graphicType" onClick={() => this.handleGraphType('Bar')}>Bar</span>
+    <span className="graphicType" onClick={() => this.handleGraphType('Line')}>Line</span>  
+    <span className="graphicType" onClick={() => this.handleGraphType('Horizontal')}>Horizontal</span>  
+    <span className="graphicType" onClick={() => this.handleGraphType('Doughnut')}>Doughnut</span> 
+    <span className="graphicType" onClick={() => this.handleGraphType('Polar')}>Polar</span>  
   </div>
   )
 }}

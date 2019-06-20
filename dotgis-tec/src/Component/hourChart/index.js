@@ -9,11 +9,12 @@ class HourChart extends Component{
   }
 
   render() {
+
   return(
   <div className="alignerFlexRow">
-    <span className="hourChart button" onClick={() => this.handleTimeLapse('threeHours')}>Day 3 Hours</span>
-    <span className="hourChart button" onClick={() => this.handleTimeLapse('sixHours')}>Day 6 Hours</span>
-    <span className="hourChart button" onClick={() => this.handleTimeLapse('fiveDays')}>5 Days</span>  
+    <span className="hourChart" onClick={() => this.handleTimeLapse('threeHours')}>Day 3 Hours</span>
+    <span className="hourChart" onClick={() => this.handleTimeLapse('sixHours')}>Day 6 Hours</span>
+    <span className="hourChart" onClick={() => this.handleTimeLapse('fiveDays')}>5 Days</span>  
   </div>  
   )}
 }
